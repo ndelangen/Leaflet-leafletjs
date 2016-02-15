@@ -89,7 +89,7 @@ exports.build = function (callback, compsBase32, buildName) {
 	console.log('Concatenating and compressing ' + files.length + ' files...');
 
 	var copy = fs.readFileSync('src/copyright.js', 'utf8'),
-	    intro = 'if (typeof window === "undefined"){(function (window, document, undefined) {',
+	    intro = 'if (typeof window !== "undefined"){(function (window, document, undefined) {',
 	    outro = '}(window, document))};',
 	    newSrc = copy + intro + combineFiles(files) + outro,
 

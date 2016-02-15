@@ -1,5 +1,5 @@
 {
-  "name": "leaflet",
+  "name": "nodesafe-leaflet",
   "version": "0.7.7",
   "description": "JavaScript library for mobile-friendly interactive maps",
   "devDependencies": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Leaflet/Leaflet.git"
+    "url": "git://github.com/ndelangen/Leaflet-leafletjs.git"
   },
   "keywords": [
     "gis",

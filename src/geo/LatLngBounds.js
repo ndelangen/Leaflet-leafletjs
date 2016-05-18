@@ -24,7 +24,7 @@ L.LatLngBounds.prototype = {
 			obj = L.latLngBounds(obj);
 		}
 
-		if (obj instanceof L.LatLng) {
+		if (obj instanceof L.LatLng || (obj.lat && obj.lng)) {
 			if (!this._southWest && !this._northEast) {
 				this._southWest = new L.LatLng(obj.lat, obj.lng);
 				this._northEast = new L.LatLng(obj.lat, obj.lng);

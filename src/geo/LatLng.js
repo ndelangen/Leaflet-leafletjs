@@ -75,7 +75,7 @@ L.LatLng.prototype = {
 };
 
 L.latLng = function (a, b) { // (LatLng) or ([Number, Number]) or (Number, Number)
-	if (a instanceof L.LatLng) {
+	if (a instanceof L.LatLng || (a.lat && a.lng)) {
 		return a;
 	}
 	if (L.Util.isArray(a)) {
@@ -96,4 +96,3 @@ L.latLng = function (a, b) { // (LatLng) or ([Number, Number]) or (Number, Numbe
 	}
 	return new L.LatLng(a, b);
 };
-

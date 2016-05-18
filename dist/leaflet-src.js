@@ -1187,7 +1187,7 @@ L.LatLng.prototype = {
 };
 
 L.latLng = function (a, b) { // (LatLng) or ([Number, Number]) or (Number, Number)
-	if (a instanceof L.LatLng) {
+	if (a instanceof L.LatLng || (a.lat && a.lng)) {
 		return a;
 	}
 	if (L.Util.isArray(a)) {
@@ -1208,7 +1208,6 @@ L.latLng = function (a, b) { // (LatLng) or ([Number, Number]) or (Number, Numbe
 	}
 	return new L.LatLng(a, b);
 };
-
 
 
 /*
@@ -1237,7 +1236,7 @@ L.LatLngBounds.prototype = {
 			obj = L.latLngBounds(obj);
 		}
 
-		if (obj instanceof L.LatLng) {
+		if (obj instanceof L.LatLng || (obj.lat && obj.lng)) {
 			if (!this._southWest && !this._northEast) {
 				this._southWest = new L.LatLng(obj.lat, obj.lng);
 				this._northEast = new L.LatLng(obj.lat, obj.lng);
